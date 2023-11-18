@@ -3,7 +3,7 @@ import React from 'react';
 function SinglePokemon(){
     return (
         <>
-        <h1>SinglePokemon</h1>
+        <h1>SinglePokemon Component</h1>
         </>
     )
 

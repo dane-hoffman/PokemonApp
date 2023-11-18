@@ -4,13 +4,13 @@ import SinglePokemon from './components/SinglePokemon';
 import CreatePokemon from './components/CreatePokemon';
 
 function App() {
-  const [mode, setMode] = useState ('pokemonList')
+  const [mode, setMode] = useState ('createPokemon')
 
   return (
     <>
  {mode === 'pokemonList' && <PokemonList/>}
- {mode === 'singlePokemon' && <>SinglePokemon</>}
- {mode === 'createPokemon' && <>CreatePokemon</>}
+ {mode === 'singlePokemon' && <SinglePokemon/>}
+ {mode === 'createPokemon' && <CreatePokemon/>}
     </>
 
   )
