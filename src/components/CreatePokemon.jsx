@@ -1,9 +1,13 @@
 import React from 'react';
 
-function CreatePokemon (){
+const handleBackClick =(setMode) => {
+    setMode('pokemonList');
+}
+function CreatePokemon ({setMode}){
     return (
         <>
         <h1>CreatePokemon Component</h1>
+        <button onClick={()=>handleBackClick(setMode)}>Back to<br></br>Pokemon List</button>
         </>
         )
 }
