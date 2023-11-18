@@ -4,7 +4,7 @@ import SinglePokemon from './components/SinglePokemon';
 import CreatePokemon from './components/CreatePokemon';
 
 function App() {
-  const [mode, setMode] = useState ('createPokemon')
+  const [mode, setMode] = useState ('pokemonList')
 
   return (
     <>
