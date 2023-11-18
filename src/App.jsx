@@ -1,15 +1,15 @@
 import React from 'react';
 import PokemonList from './components/PokemonList';
-import SinglePokemon from './components/SinglePokemon'
+import SinglePokemon from './components/SinglePokemon';
+import CreatePokemon from './components/CreatePokemon';
 
 function App() {
 
 
   return (
-  
     // <PokemonList />
-    <SinglePokemon />
-
+    // <SinglePokemon />
+    <CreatePokemon />
   )
 }
 
