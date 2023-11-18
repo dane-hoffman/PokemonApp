@@ -4,9 +4,15 @@ const handleBackClick = (setMode) =>{
     setMode('createPokemon')
    }
 
-function PokemonList({setMode}){
+const fetchPokemonAPI = async () => {
     //FETCH API 'response'
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+    console.log(response);
     //FETCH API JSON 'result'
+   }
+
+function PokemonList({setMode}){
+    fetchPokemonAPI();
     //MAP through array
         //Render 'PokemonList' to the screen
         //onClick forEach 'PokemonList' item >>> 'SinglePokemon' view
