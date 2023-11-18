@@ -7,9 +7,12 @@ function App() {
 
 
   return (
-    // <PokemonList />
-    // <SinglePokemon />
+    <>
+    <PokemonList />
+    <SinglePokemon />
     <CreatePokemon />
+    </>
+
   )
 }
 
