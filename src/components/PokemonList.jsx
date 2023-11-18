@@ -7,7 +7,8 @@ const handleBackClick = (setMode) =>{
 const fetchPokemonAPI = async () => {
     //FETCH API 'response'
     const response = await fetch('https://pokeapi.co/api/v2/pokemon');
-    console.log(response);
+    const result = await response.json();
+    console.log(result);
     //FETCH API JSON 'result'
    }
 
