@@ -8,7 +8,6 @@ function PokemonList(){
     return(
         <>
         <h1>PokemonList Component</h1>
-        <button>Back</button>
         </>
     )
 }
