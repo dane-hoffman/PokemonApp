@@ -8,9 +8,9 @@ function App() {
 
   return (
     <>
- {mode === 'pokemonList' && <PokemonList/>}
+ {mode === 'pokemonList' && <PokemonList setMode={setMode}/>}
  {mode === 'singlePokemon' && <SinglePokemon setMode={setMode}/>}
- {mode === 'createPokemon' && <CreatePokemon/>}
+ {mode === 'createPokemon' && <CreatePokemon setMode={setMode}/>}
     </>
 
   )

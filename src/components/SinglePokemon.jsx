@@ -8,6 +8,7 @@ function SinglePokemon({setMode}){
         <>
         <h1>SinglePokemon Component</h1>
         <button onClick={() => handleBackClick(setMode)}>Back</button>
+        {/* Dislay Pokemon Data */}
         </>
     )
 
