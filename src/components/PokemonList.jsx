@@ -4,12 +4,12 @@ const handleBackClick = (setMode) =>{
     setMode('createPokemon')
    }
 
-const fetchPokemonAPI = async () => {
-    //FETCH API 'response'
+const fetchPokemonAPI = async (pokemonList) => {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon');
     const result = await response.json();
-    console.log(result);
-    //FETCH API JSON 'result'
+    pokemonList = result.results
+    console.log(pokemonList);
+
    }
 
 function PokemonList({setMode}){
