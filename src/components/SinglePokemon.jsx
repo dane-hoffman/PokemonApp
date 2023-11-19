@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 
-
 function SinglePokemon({ setMode, selectedPokemon }) {
   const [pokemonData, setPokemonData] = useState(null); // State to hold fetched data
 
@@ -35,6 +34,13 @@ function SinglePokemon({ setMode, selectedPokemon }) {
             <h4>{pokemonData.name}</h4>
             <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
             <h4>Type: {pokemonData.types[0].type.name}</h4>
+            <ul>
+            <h4>Stats:</h4>
+    {pokemonData.stats.map((statData, index) => (
+      <p key={index}>{statData.stat.name}</p>
+    ))}
+            </ul>
+            
             {/* Display other relevant data */}
           </div>
         )}
