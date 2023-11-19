@@ -1,17 +1,22 @@
 import React from 'react';
 
-const handleBackClick = (setMode) =>{
-    setMode('pokemonList')
-   }
-function SinglePokemon({setMode}){
-    return (
-        <>
-        <h1>SinglePokemon Component</h1>
-        <button onClick={() => handleBackClick(setMode)}>Back</button>
-        {/* Dislay Pokemon Data */}
-        </>
-    )
+function SinglePokemon({ setMode, selectedPokemon }) {
+  const handleBackClick = () => {
+    setMode('pokemonList');
+  };
 
+  return (
+    <>
+      <h1>SinglePokemon Component</h1>
+      <button onClick={handleBackClick}>Back</button>
+      <div>
+        {selectedPokemon && <p>{selectedPokemon.name}</p>}
+        {/* More details */}
+      </div>
+    </>
+  );
 }
 
 export default SinglePokemon;
+
+
