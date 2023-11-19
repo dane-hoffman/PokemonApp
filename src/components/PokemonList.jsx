@@ -8,6 +8,8 @@ const fetchPokemonAPI = async () => {
 
 function PokemonList({ setMode }) {
   const [pokemonList, setPokemonList] = useState([]);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +24,8 @@ function PokemonList({ setMode }) {
     setMode('createPokemon');
   };
 
-  const handleListItemClick = () => {
+  const handleListItemClick = (setSelectedPokemon) => {
+    setSelectedPokemon(selectedPokemon);
     setMode('singlePokemon');
   };
 
@@ -33,7 +36,7 @@ function PokemonList({ setMode }) {
       <p>List of Pokemon:</p>
       <ul>
         {pokemonList.map((pokemon, index) => (
-          <li key={index} onClick={() => handleListItemClick(setMode)}>{pokemon.name}</li>
+          <li key={index} onClick={() => handleListItemClick(setSelectedPokemon)}>{pokemon.name}</li>
         ))}
       </ul>
     </>
