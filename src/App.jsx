@@ -2,6 +2,7 @@ import React, { useState } from 'react'; // Import React and useState hook
 import PokemonList from './components/PokemonList'; // Import PokemonList component
 import SinglePokemon from './components/SinglePokemon'; // Import SinglePokemon component
 import CreatePokemon from './components/CreatePokemon'; // Import CreatePokemon component
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() { // Define App component
   const [mode, setMode] = useState('pokemonList'); // State for mode: default mode is 'pokemonList'
@@ -17,4 +18,3 @@ function App() { // Define App component
 }
 
 export default App; // Export App component
-
