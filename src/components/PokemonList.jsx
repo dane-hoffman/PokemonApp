@@ -4,13 +4,15 @@ const handleBackClick = (setMode) =>{
     setMode('createPokemon')
    }
 
-const fetchPokemonAPI = async (pokemonList) => {
+const fetchPokemonAPI = async () => {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon');
     const result = await response.json();
-    pokemonList = result.results
-    console.log(pokemonList);
+    const pokemonList = result.results;
+    pokemonList.forEach(pokemon => {
+        console.log(pokemon.name);
+    });
 
-   }
+   };
 
 function PokemonList({setMode}){
     fetchPokemonAPI();
@@ -24,6 +26,7 @@ function PokemonList({setMode}){
         <>
         <h1>PokemonList Component</h1>
         <button onClick={() => handleBackClick(setMode)}>Create a Pokemon</button>
+        <p >List of Pokemon</p>
         </>
     )
 }
