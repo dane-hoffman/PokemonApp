@@ -37,7 +37,7 @@ function SinglePokemon({ setMode, selectedPokemon }) {
             <ul>
             <h4>Stats:</h4>
     {pokemonData.stats.map((statData, index) => (
-      <p key={index}>{statData.stat.name}</p>
+      <p key={index}>{statData.stat.name}:{statData.base_stat}</p>
     ))}
             </ul>
             
