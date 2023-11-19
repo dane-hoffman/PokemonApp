@@ -1,34 +1,43 @@
-import React from 'react';
-
-const handleBackClick = (setMode) =>{
-    setMode('createPokemon')
-   }
+import React, { useState, useEffect } from 'react';
 
 const fetchPokemonAPI = async () => {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon');
-    const result = await response.json();
-    const pokemonList = result.results;
-    pokemonList.forEach(pokemon => {
-        console.log(pokemon.name);
-    });
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+  const result = await response.json();
+  return result.results;
+};
 
-   };
+function PokemonList({ setMode }) {
+  const [pokemonList, setPokemonList] = useState([]);
 
-function PokemonList({setMode}){
-    fetchPokemonAPI();
-    //MAP through array
-        //Render 'PokemonList' to the screen
-        //onClick forEach 'PokemonList' item >>> 'SinglePokemon' view
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchPokemonAPI();
+      setPokemonList(data);
+    };
 
-    //Create a button going to 'CreatePokemon' view
+    fetchData();
+  }, []);
 
-    return(
-        <>
-        <h1>PokemonList Component</h1>
-        <button onClick={() => handleBackClick(setMode)}>Create a Pokemon</button>
-        <p >List of Pokemon</p>
-        </>
-    )
+  const handleBackClick = () => {
+    setMode('createPokemon');
+  };
+
+  const handleListItemClick = () => {
+    setMode('singlePokemon');
+  };
+
+  return (
+    <>
+      <h1>PokemonList Component</h1>
+      <button onClick={handleBackClick}>Create a Pokemon</button>
+      <p>List of Pokemon:</p>
+      <ul>
+        {pokemonList.map((pokemon, index) => (
+          <li key={index} onClick={() => handleListItemClick(setMode)}>{pokemon.name}</li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 export default PokemonList;
