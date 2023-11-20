@@ -44,36 +44,32 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
     </Container>
 
     <Card style={{ width: '15rem' }}>
-    {pokemonData && pokemonData.sprites && ( // Check if pokemonData and sprites exist before accessing
+  {pokemonData && pokemonData.sprites && (
     <Card.Img variant="top" src={pokemonData.sprites.front_default} alt={pokemonData.name} />
   )}
-      <Card.Body>
-        <Card.Title>{selectedPokemon.name}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-      </Card.Body>
-    </Card>
+  <Card.Body>
+    <Card.Title>{pokemonData ? pokemonData.name : selectedPokemon.name}</Card.Title>
+    {pokemonData && pokemonData.stats && pokemonData.stats.length > 0 ? (
+      <div>
+        <h4>Stats:</h4>
+        <ul>
+          {pokemonData.stats.map((statData, index) => (
+            <li key={index}>
+              {statData.stat.name}: {statData.base_stat}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ) : (
+      <p>No stats available</p>
+    )}
+  </Card.Body>
+</Card>
+
+
 
       <h1>SinglePokemon Component</h1>
       <button onClick={handleBackClick}>Back</button> {/* Button to go back to PokemonList */}
-      <div>
-        {pokemonData && ( // Conditionally render if pokemonData exists
-          <div>
-            <h4>{pokemonData.name}</h4> {/* Display Pokemon's name */}
-            <img src={pokemonData.sprites.front_default} alt={pokemonData.name} /> {/* Display Pokemon's image */}
-            <h4>Type: {pokemonData.types[0].type.name}</h4> {/* Display Pokemon's type */}
-            <ul>
-              <h4>Stats:</h4>
-              {pokemonData.stats.map((statData, index) => ( // Map through Pokemon's stats and display them
-                <p key={index}>{statData.stat.name}: {statData.base_stat}</p>
-              ))}
-            </ul>
-            {/* Display other relevant data */}
-          </div>
-        )}
-      </div>
     </>
   );
 }
