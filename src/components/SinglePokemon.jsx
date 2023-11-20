@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'; // Import React, useState, a
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 
 function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon component
@@ -41,7 +42,18 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
         <Col>3 of 3</Col>
       </Row>
     </Container>
-    
+
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+    </Card>
+
       <h1>SinglePokemon Component</h1>
       <button onClick={handleBackClick}>Back</button> {/* Button to go back to PokemonList */}
       <div>
