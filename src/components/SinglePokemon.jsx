@@ -38,7 +38,7 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
         <Col>3 of 3</Col>
       </Row>
       <Row>
-        <Col>1 of 3</Col>
+        <Col> <button onClick={handleBackClick}>Back</button></Col>
         <Col xs={5}><Card style={{ width: '15rem' }}>
   {pokemonData && pokemonData.sprites && (
     <Card.Img variant="top" src={pokemonData.sprites.front_default} alt={pokemonData.name} />
@@ -47,7 +47,7 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
     <Card.Title>{pokemonData ? pokemonData.name : selectedPokemon.name}</Card.Title>
     {pokemonData && pokemonData.stats && pokemonData.stats.length > 0 ? (
       <div>
-        <h4>Stats:</h4>
+        <h6>Stats:</h6>
         <ul>
           {pokemonData.stats.map((statData, index) => (
             <li key={index}>
@@ -64,7 +64,6 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
         <Col>3 of 3</Col>
       </Row>
     </Container>
-      <button onClick={handleBackClick}>Back</button> {/* Button to go back to PokemonList */}
     </>
   );
 }
