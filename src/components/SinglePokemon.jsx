@@ -43,10 +43,12 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
       </Row>
     </Container>
 
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card style={{ width: '15rem' }}>
+    {pokemonData && pokemonData.sprites && ( // Check if pokemonData and sprites exist before accessing
+    <Card.Img variant="top" src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+  )}
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{selectedPokemon.name}</Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
