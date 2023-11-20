@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'; // Import React, useState, and useEffect hooks
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon component
   const [pokemonData, setPokemonData] = useState(null); // State to hold fetched data
@@ -25,6 +29,19 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
 
   return ( // Return JSX
     <>
+        <Container>
+      <Row>
+        <Col>1 of 3</Col>
+        <Col xs={6}>2 of 3 (wider)</Col>
+        <Col>3 of 3</Col>
+      </Row>
+      <Row>
+        <Col>1 of 3</Col>
+        <Col xs={5}>2 of 3 (wider)</Col>
+        <Col>3 of 3</Col>
+      </Row>
+    </Container>
+    
       <h1>SinglePokemon Component</h1>
       <button onClick={handleBackClick}>Back</button> {/* Button to go back to PokemonList */}
       <div>
