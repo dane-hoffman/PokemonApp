@@ -28,8 +28,9 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
     setMode('pokemonList'); // Set mode to 'pokemonList'
   };
 
-  return ( // Return JSX
+  return (
     <>
+    <h1>SinglePokemon Component</h1>
         <Container>
       <Row>
         <Col>1 of 3</Col>
@@ -38,12 +39,7 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
       </Row>
       <Row>
         <Col>1 of 3</Col>
-        <Col xs={5}>2 of 3 (wider)</Col>
-        <Col>3 of 3</Col>
-      </Row>
-    </Container>
-
-    <Card style={{ width: '15rem' }}>
+        <Col xs={5}><Card style={{ width: '15rem' }}>
   {pokemonData && pokemonData.sprites && (
     <Card.Img variant="top" src={pokemonData.sprites.front_default} alt={pokemonData.name} />
   )}
@@ -64,11 +60,10 @@ function SinglePokemon({ setMode, selectedPokemon }) { // Define SinglePokemon c
       <p>No stats available</p>
     )}
   </Card.Body>
-</Card>
-
-
-
-      <h1>SinglePokemon Component</h1>
+</Card></Col>
+        <Col>3 of 3</Col>
+      </Row>
+    </Container>
       <button onClick={handleBackClick}>Back</button> {/* Button to go back to PokemonList */}
     </>
   );
